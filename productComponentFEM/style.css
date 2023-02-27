@@ -1,0 +1,186 @@
+/* Custom Properties */
+:root {
+  --clr-primary: hsl(158, 36%, 37%);
+  --clr-primary-dark: hsl(158, 40%, 20%);
+  --clr-background: hsl(30, 38%, 92%);
+  
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-700: hsl(212, 21%, 14%);
+  
+  --ff-heading: "Fraunces", serif;
+  --ff-body: "Montserrat", sans-serif;
+  
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  font: inherit;
+}
+
+/* Utility Classes */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+/* Styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 0;
+  min-height: 100vh;
+  
+  background: var(--clr-background);
+  
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-400);
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+.container {
+  margin: 1rem;
+}
+
+.card {
+  display: grid;
+  max-width: 37.5rem;
+  
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.product {
+  --content-padding: 1.5rem;
+  --content-spacing: 1rem;
+  
+  background: var(--clr-neutral-100);
+  padding: 2rem;
+  display: grid;
+  gap: var(--content-spacing);
+  padding: var(--content-padding);
+}
+
+@media (min-width: 37.5em) {
+  .product {
+    --content-padding: 2rem;
+  }
+  
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+h1, .product-price {
+  font-family: var(--ff-heading);
+  font-size: 2rem;
+}
+
+h1 {
+  color: var(--clr-neutral-700);
+  line-height: 1;
+  letter-spacing: 1.5px;
+}
+
+p {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-price {
+  color: var(--clr-primary);
+  letter-spacing: 1.5px;
+}
+
+.original-price {
+  color: var(--clr-neutral-400);
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-decoration: line-through;
+  
+  opacity: 0.8;
+}
+
+button {
+  cursor: pointer; 
+  
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-primary);
+  
+  width: 100%;
+  padding: 0.75em 1em;
+  margin-bottom: 1rem;
+  
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--clr-primary-dark);
+}
+
+.button-text {
+  position: relative;
+  
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--clr-neutral-100);
+}
+
+.button-text::before {
+  content: '';
+  position: absolute;
+  left: -1.5em;
+  top: 0.25em;
+  width: 1em;
+  height: 1em;
+  
+  background-image: url("https://ohuttar.github.io/productComponentFEM/images/icon-cart.svg");
+}
