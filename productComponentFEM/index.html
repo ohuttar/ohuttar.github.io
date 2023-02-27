@@ -1,9 +1,23 @@
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png">
+    <title>FEM Product Preview Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
   <div class="container">
     <div class="card">
       <picture class="product-image"> <!-- picture enables the source tag to set multiple sources for one image -->
-      <source srcset="https://ohuttar.github.io/productComponentFEM/images/image-product-desktop.jpg" media="(min-width: 37.5em)">
-      <img class="img-mobile"src="https://ohuttar.github.io/productComponentFEM/images/image-product-mobile.jpg" alt="Gabrielle Essence perfume bottle lying on a table surrounded by leaves">
+      <source srcset="images/image-product-desktop.jpg" media="(min-width: 37.5em)">
+      <img class="img-mobile"src="images/image-product-mobile.jpg" alt="Gabrielle Essence perfume bottle lying on a table surrounded by leaves">
       </picture>
       <div class="product">
         <h2 class="product-category">Perfume</h2>
@@ -23,4 +37,5 @@
       </div>
     </div>
   </div>
-</main>
+  </main>
+</body>
