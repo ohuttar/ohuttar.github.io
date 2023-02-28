@@ -107,7 +107,7 @@ h1, .product-price {
 h1 {
   color: var(--clr-neutral-700);
   line-height: 1;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
 }
 
 p {
