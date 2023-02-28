@@ -26,7 +26,11 @@
   margin: 0;
 }
 
-img {
+html, body {
+  height: 100%;
+}
+
+img, picture {
   display: block;
   max-width: 100%;
 }
@@ -49,12 +53,10 @@ button {
 
 /* Styling */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   
-  margin: 0;
-  min-height: 100vh;
+  margin: 1rem;
   
   background: var(--clr-background);
   
@@ -65,10 +67,6 @@ body {
   letter-spacing: 0.2px;
 }
 
-.container {
-  margin: 1rem;
-}
-
 .card {
   display: grid;
   max-width: 37.5rem;
@@ -77,29 +75,20 @@ body {
   overflow: hidden;
 }
 
-img {
-  height: 100%;
-  object-fit: cover;
-}
-
 .product {
   --content-padding: 1.5rem;
   --content-spacing: 1rem;
   
   background: var(--clr-neutral-100);
-  padding: 2rem;
   display: grid;
   gap: var(--content-spacing);
   padding: var(--content-padding);
 }
 
 @media (min-width: 37.5em) {
-  .product {
-    --content-padding: 2rem;
-  }
-  
   .card {
     grid-template-columns: 1fr 1fr;
+    --content-padding: 2rem;
   }
 }
 
@@ -159,7 +148,6 @@ button {
   
   width: 100%;
   padding: 0.75em 1em;
-  margin-bottom: 1rem;
   
   font-size: 0.875rem;
   color: var(--clr-neutral-100);
