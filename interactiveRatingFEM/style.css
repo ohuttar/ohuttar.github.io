@@ -1,0 +1,199 @@
+/* Custom Variables */
+:root{
+  --clr-primary: hsl(25, 97%, 53%);
+  --clr-secondary: hsl(213, 19%, 18%);
+  --clr-secondary-dark: hsl(216, 12%, 8%);
+  
+  --clr-card-background: hsl(215, 25%, 9.4%);
+  
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(217, 12%, 63%);
+  --clr-neutral-300: hsl(217, 30%, 45%);
+  --clr-neutral-400: hsl(216, 12%, 54%);
+  
+  --ff-main: "Overpass", sans-serif;
+  
+  --fs-regular: 0.875rem;
+  
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Utility Classes */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+  
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Main styles */
+body {
+  display: grid;
+  place-items: center;
+  
+  margin: 0rem 1.5rem;
+  
+  font-family: var(--ff-main);
+  font-size: var(--fs-regular);
+  background-color: var(--clr-secondary-dark);
+  color: var(--clr-neutral-200);
+  line-height: 1.5;
+  
+  caret-color: transparent;
+}
+
+.card {
+  --grid-gap: 1rem;
+  display: grid;
+  gap: var(--grid-gap);
+  
+  max-width: 25rem;
+  padding: 2rem; 
+  background-color: var(--clr-card-background);
+  background-image: radial-gradient(circle at top center, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.025) 50%, transparent 100%);
+  
+  border-radius: 1rem;
+  
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.circle {
+  display: grid;
+  place-items: center;
+  
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--clr-secondary);
+  border-radius: 50%;
+}
+
+.star-icon {
+  width: var(--fs-regular);
+}
+
+h1 {
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-regular);
+  font-size: 1.5rem;
+}
+
+p {
+  text-align: left;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.one, .two, .three, .four, .five {
+  color: var(--clr-neutral-200);
+  
+  transition: all 100ms linear;
+}
+
+.one:hover, .one:focus, .two:hover, .two:focus, .three:hover, .three:focus, .four:hover, .four:focus, .five:hover, .five:focus {
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-100);
+}
+
+.active {
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-100);
+}
+
+.button {
+  background: var(--clr-primary);
+  color: var(--clr-neutral-100);
+  
+  padding: 0.75em 1.5em;
+  
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  
+  border-radius: 100vw;
+  transition: all 50ms linear;
+}
+
+button:hover,
+button:focus{
+  background: var(--clr-neutral-100);
+  color: var(--clr-primary);
+}
+
+.thank-you {
+  place-items: center;
+}
+
+.p__thank-you, .h1__thank-you {
+  text-align: center;
+}
+
+.selection {
+  background-color: var(--clr-secondary);
+  padding: 0.5em 1em;
+  
+  border-radius: 100vw;
+}
+
+.selection > p {
+  color: var(--clr-primary);
+}
+
+.img__thank-you {
+  width: 9rem;
+}
+
+@media (min-width: 27rem) {
+  
+  :root {
+    --fs-regular: 0.9375rem;
+  }
+  .card {
+    --grid-gap: 1.5rem;
+  }
+  .circle {
+    width: 3rem;
+    height: 3rem;
+  }
+}
