@@ -180,9 +180,10 @@ body {
 .judgement {
   color: var(--clr-neutral-100);
   font-weight: var(--fw-regular);
+  font-size: 1.5rem;
 }
 
-.result-section > p {
+.judgement-elaboration {
   text-align: center;
   font-size: 1rem;
   color: var(--clr-neutral-400);
@@ -210,7 +211,7 @@ body {
   border-radius: var(--result-border-r);
 }
 
-.summary-reaction > div > h3 {
+.summary-reaction-text {
   color: var(--clr-primary-red);
   font-size: var(--fs-summary);
   margin-left: var(--margin-left-summary);
@@ -222,7 +223,7 @@ body {
   border-radius: var(--result-border-r);
 }
 
-.summary-memory > div > h3 {
+.summary-memory-text {
   color: var(--clr-primary-orange);
   font-size: var(--fs-summary);
   margin-left: var(--margin-left-summary);
@@ -234,7 +235,7 @@ body {
   border-radius: var(--result-border-r);
 }
 
-.summary-verbal > div > h3 {
+.summary-verbal-text {
   color: var(--clr-primary-green);
   font-size: var(--fs-summary);
   margin-left: var(--margin-left-summary);
@@ -246,7 +247,7 @@ body {
   border-radius: var(--result-border-r);
 }
 
-.summary-visual > div > h3 {
+.summary-visual-text {
   color: var(--clr-primary-blue);
   font-size: var(--fs-summary);
   margin-left: var(--margin-left-summary);
@@ -329,7 +330,7 @@ body {
     font-size: 2rem;
   }
 
-  .result-section > p {
+  .judgement-elaboration {
     font-size: 1.125rem;
     margin-inline: 1em;
   }
