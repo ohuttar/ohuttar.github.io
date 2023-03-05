@@ -1,0 +1,361 @@
+/* Custom Properties */
+:root {
+  --clr-primary-red: hsl(0, 100%, 67%);
+  --clr-secondary-red: hsl(0, 100%, 67%, 0.1);
+  --clr-primary-orange: hsl(39, 100%, 56%);
+  --clr-secondary-orange: hsl(39, 100%, 56%, 0.1);
+  --clr-primary-green: hsl(166, 100%, 37%);
+  --clr-secondary-green: hsl(166, 100%, 37%, 0.1);
+  --clr-primary-blue: hsl(234, 85%, 45%);
+  --clr-secondary-blue: hsl(234, 85%, 45%, 0.1);
+
+  --clr-bg-grad-1: hsl(252, 100%, 67%); /* light slate blue */
+  --clr-bg-grad-2: hsl(241, 81%, 54%); /* light royal blue */
+
+  --clr-circle-grad-1: hsla(256, 72%, 46%, 1); /* violet blue */
+  --clr-circle-grad-2: hsla(241, 72%, 46%, 0); /* persian blue */
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-300: hsl(221, 100%, 96%); /* pale blue */
+  --clr-neutral-400: hsl(241, 100%, 89%); /* light lavender */
+  --clr-neutral-700: hsl(224, 30%, 27%); /* dark gray blue */
+
+  --ff-primary: "Hanken Grotesk";
+
+  --fw-regular: 500;
+  --fw-semi-bold: 700;
+  --fw-bold: 800;
+}
+
+/* Reset from https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Utility Classes*/
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.bold {
+  font-weight: var(--fw-bold);
+}
+
+/* General Styles */
+body {
+  display: grid;
+  justify-items: center;
+  
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-700);
+  line-height: 1.4;
+}
+
+.card {
+  display: grid;
+  min-width: 20rem;
+}
+
+.result-section {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+
+  padding: 2rem 3rem;
+
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-bg-grad-1),
+    var(--clr-bg-grad-2)
+  );
+
+  border-radius: 0 0 2rem 2rem;
+}
+
+.section-heading-result {
+  color: var(--clr-neutral-400);
+  font-size: 1.125rem;
+  font-weight: var(--fw-regular);
+}
+
+.total-score {
+  display: grid;
+  place-items: center;
+
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-circle-grad-1),
+    var(--clr-circle-grad-2)
+  );
+
+  width: 8rem;
+  height: 8rem;
+
+  border-radius: 50%;
+}
+
+.total-score > p {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 3.5rem;
+}
+
+.total-score > p::after {
+  content: "of 100";
+  position: absolute;
+  left: 0.75em;
+  top: 4.5rem;
+
+  font-size: 0.875rem;
+  color: var(--clr-neutral-400);
+}
+
+.judgement {
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-regular);
+}
+
+.result-section > p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--clr-neutral-400);
+}
+
+.summary-section {
+  --result-padding: 1rem 1rem;
+  --result-border-r: 0.5em;
+  --fs-summary: 1rem;
+  --margin-left-summary: 0.75rem;
+  display: grid;
+  gap: 1.5rem;
+
+  padding: 1rem 2rem;
+}
+
+.section-heading-summary {
+  color: var(--clr-neutral-700);
+  font-size: 1.125rem;
+}
+
+.summary-reaction {
+  background-color: var(--clr-secondary-red);
+  padding: var(--result-padding);
+  border-radius: var(--result-border-r);
+}
+
+.summary-reaction > div > h3 {
+  color: var(--clr-primary-red);
+  font-size: var(--fs-summary);
+  margin-left: var(--margin-left-summary);
+}
+
+.summary-memory {
+  background-color: var(--clr-secondary-orange);
+  padding: var(--result-padding);
+  border-radius: var(--result-border-r);
+}
+
+.summary-memory > div > h3 {
+  color: var(--clr-primary-orange);
+  font-size: var(--fs-summary);
+  margin-left: var(--margin-left-summary);
+}
+
+.summary-verbal {
+  background-color: var(--clr-secondary-green);
+  padding: var(--result-padding);
+  border-radius: var(--result-border-r);
+}
+
+.summary-verbal > div > h3 {
+  color: var(--clr-primary-green);
+  font-size: var(--fs-summary);
+  margin-left: var(--margin-left-summary);
+}
+
+.summary-visual {
+  background-color: var(--clr-secondary-blue);
+  padding: var(--result-padding);
+  border-radius: var(--result-border-r);
+}
+
+.summary-visual > div > h3 {
+  color: var(--clr-primary-blue);
+  font-size: var(--fs-summary);
+  margin-left: var(--margin-left-summary);
+}
+
+.button {
+  cursor: pointer;
+  max-height: 3.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: var(--clr-neutral-700);
+
+  color: var(--clr-neutral-300);
+
+  border-radius: 100vw;
+}
+
+.button:hover,
+.button:focus {
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-bg-grad-1),
+    var(--clr-bg-grad-2)
+  );
+  color: var(--clr-neutral-100);
+}
+
+.score-span {
+  opacity: 0.6;
+  font-weight: var(--fw-regular);
+}
+
+@media (min-width: 40rem) {
+  body {
+    place-items: center;
+  }
+
+  .result-section {
+    gap: 2rem;
+    border-radius: 2rem;
+    padding: 2.5rem;
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem;
+    max-width: 46rem;
+
+    box-shadow: 0 0 30px var(--clr-neutral-300);
+    border-radius: 2rem;
+  }
+
+  .section-heading-result {
+    font-size: 1.5rem;
+  }
+
+  .total-score {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .total-score > p {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 5rem;
+  }
+
+  .total-score > p::after {
+    content: "of 100";
+    position: absolute;
+    left: 1.5em;
+    top: 6em;
+
+    font-size: 1rem;
+    color: var(--clr-neutral-400);
+  }
+
+  .judgement {
+    font-size: 2rem;
+  }
+
+  .result-section > p {
+    font-size: 1.125rem;
+    margin-inline: 1em;
+  }
+
+  .summary-section {
+    padding: 2.5rem;
+    gap: 1rem;
+    --fs-summary: 1.125rem;
+  }
+
+  .section-heading-summary {
+    font-size: 1.5rem;
+  }
+  
+  .summary-reaction, 
+  .summary-memory, 
+  .summary-verbal, 
+  .summary-visual {
+    padding: 0.5em 0.75em;
+  }
+  
+  .score {
+    font-size: var(--fs-summary);
+  }
+  
+  .button {
+    margin-top: 2rem;
+  }
+}
