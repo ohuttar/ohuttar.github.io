@@ -1,0 +1,200 @@
+/* Custom Properties */
+:root {
+  --clr-primary-orange: hsl(31, 77%, 52%);
+  --clr-primary-blue: hsl(184, 100%, 22%);
+  --clr-primary-green: hsl(179, 100%, 13%);
+
+  --clr-neutral-100: hsla(0, 0%, 100%, 0.75); /* paragraphs */
+  --clr-neutral-200: hsl(0, 0%, 95%); /* background, headings, buttons */
+
+  --ff-heading: "Big Shoulders Display", sans-serif;
+  --ff-body: "Lexend Deca", sans-serif;
+}
+
+/* Reset from https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Utility Classes*/
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.clr-orange {
+  color: var(--clr-primary-orange);
+}
+
+.clr-blue {
+  color: var(--clr-primary-blue);
+}
+
+.clr-green {
+  color: var(--clr-primary-green);
+}
+
+.off-screen-left {
+  transform: translateX(-100vw);
+}
+
+.opacity-none {
+  opacity: 0;
+}
+
+/* General Styles */
+body {
+  display: grid;
+  place-items: center;
+
+  font-family: var(--ff-body);
+  font-size: 15px;
+  color: var(--clr-neutral-200);
+  line-height: 1.6;
+}
+
+main {
+  padding: 6rem 1.5rem;
+}
+
+.card {
+  display: grid;
+
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+section {
+  --margin-b: 1.5rem;
+  display: grid;
+
+  padding: 3rem;
+}
+
+.icon {
+  margin-bottom: var(--margin-b);
+
+  transition: 500ms ease-out;
+}
+
+h2 {
+  margin-bottom: var(--margin-b);
+
+  font-family: var(--ff-heading);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+
+  opacity: 1;
+  transition: 500ms ease-out;
+}
+
+p {
+  margin-bottom: var(--margin-b);
+
+  font-family: var(--ff-body);
+  color: var(--clr-neutral-100);
+
+  opacity: 1;
+  transition: 500ms ease-out;
+}
+
+.sedans {
+  background-color: var(--clr-primary-orange);
+}
+
+.suvs {
+  background-color: var(--clr-primary-blue);
+}
+
+.luxury {
+  background-color: var(--clr-primary-green);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5625rem;
+  max-width: 9rem;
+
+  border: 3px solid var(--clr-neutral-100);
+  border-radius: 100vw;
+
+  opacity: 1;
+  transition: opacity 500ms ease-out, background-color 50ms ease;
+}
+
+button:focus,
+button:hover {
+  color: var(--clr-neutral-100);
+}
+
+.sedans > button:focus,
+.sedans > button:hover {
+  background-color: var(--clr-primary-orange);
+}
+
+.suvs > button:focus,
+.suvs > button:hover {
+  background-color: var(--clr-primary-blue);
+}
+
+.luxury > button:focus,
+.luxury > button:hover {
+  background-color: var(--clr-primary-green);
+}
+
+@media (min-width: 42em) {
+  main {
+    padding: 1.5rem;
+  }
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 57rem;
+  }
+
+  p {
+    margin-bottom: 5rem;
+  }
+}
