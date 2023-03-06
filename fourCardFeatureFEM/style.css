@@ -135,7 +135,7 @@ main {
   font-weight: var(--fw-thin);
   
   opacity: 1;
-  transition: opacity 1200ms ease-in-out;
+  transition: opacity 0ms ease-in-out;
 }
 
 span {
