@@ -201,7 +201,7 @@ h2 {
   }
 
   .product-explanation {
-    margin: 0.75rem 0 4rem;
+    margin: 0.75rem auto 4rem;
     max-width: 55ch;
   }
 
